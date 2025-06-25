@@ -11453,18 +11453,30 @@ button.icon {
   justify-content: center;
   height: 3.5rem;
   width: 3.5rem;
-  background-color: var(--color-text);
-  color: var(--color-page-background);
+  background-color: #495057;
+  color: #ffffff;
   border-radius: 100%;
   font-size: 1.5rem;
   margin-right: 1.5rem;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 .social-icons .social-icon:last-child {
   margin-right: 0;
 }
 .social-icons .social-icon:hover {
   background-color: #666699;
-  color: var(--color-text);
+  color: #ffffff;
+}
+
+.dark .social-icons .social-icon {
+  background-color: #DFDFDF;
+  color: #003042;
+}
+
+.dark .social-icons .social-icon:hover {
+  background-color: #666699;
+  color: #DFDFDF;
 }
 
 .dev-icons {
