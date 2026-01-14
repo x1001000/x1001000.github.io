@@ -11510,3 +11510,312 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+
+/* ============================================
+   MODERN GLASSMORPHISM REDESIGN
+   Cool Tech Vibes + Glass Effects
+   ============================================ */
+
+/* Updated Color Palette - Cool Tech */
+:root {
+  --accent-cyan: #00d4ff;
+  --accent-blue: #667eea;
+  --accent-purple: #764ba2;
+  --accent-teal: #06b6d4;
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --cyan-gradient: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+  --glow-cyan: 0 0 20px rgba(0, 212, 255, 0.3);
+  --glow-blue: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+.dark {
+  --color-page-background: #0a192f;
+  --color-text: #e6f1ff;
+  --color-text-secondary: #8892b0;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg-hover: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(0, 212, 255, 0.3);
+}
+
+/* Animated Background Gradient */
+.dark body,
+body.dark {
+  background: linear-gradient(135deg, #0a192f 0%, #112240 50%, #0a192f 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glassmorphism Section Cards */
+section.resume-section .resume-section-content {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+section.resume-section .resume-section-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+section.resume-section .resume-section-content:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-cyan);
+}
+
+section.resume-section .resume-section-content:hover::before {
+  opacity: 1;
+}
+
+/* Gradient Text for Main Heading */
+.dark h1.mb-0,
+.dark .h1.mb-0 {
+  background: linear-gradient(135deg, #e6f1ff 0%, #00d4ff 50%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section Titles with Accent */
+.dark h2.mb-5,
+.dark .h2.mb-5 {
+  position: relative;
+  display: inline-block;
+}
+
+.dark h2.mb-5::after,
+.dark .h2.mb-5::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--cyan-gradient);
+  border-radius: 2px;
+}
+
+/* Updated Primary Text Color */
+.dark .text-primary {
+  color: var(--accent-cyan) !important;
+}
+
+/* Modernized Sidebar */
+.dark #sideNav {
+  background: linear-gradient(180deg, rgba(10, 25, 47, 0.95) 0%, rgba(17, 34, 64, 0.98) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid var(--glass-border);
+}
+
+@media (min-width: 992px) {
+  .dark #sideNav {
+    box-shadow: 4px 0 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Profile Image Glow */
+.dark #sideNav .navbar-brand .img-profile {
+  border: 3px solid transparent;
+  background: linear-gradient(#0a192f, #0a192f) padding-box,
+              linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)) border-box;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+  transition: all 0.4s ease;
+}
+
+.dark #sideNav .navbar-brand .img-profile:hover {
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+  transform: scale(1.02);
+}
+
+/* Nav Links with Hover Effect */
+.dark #sideNav .navbar-nav .nav-item .nav-link {
+  color: var(--color-text-secondary);
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1rem;
+}
+
+.dark #sideNav .navbar-nav .nav-item .nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--cyan-gradient);
+  transition: width 0.3s ease;
+}
+
+.dark #sideNav .navbar-nav .nav-item .nav-link:hover,
+.dark #sideNav .navbar-nav .nav-item .nav-link.active {
+  color: var(--accent-cyan);
+}
+
+.dark #sideNav .navbar-nav .nav-item .nav-link:hover::before,
+.dark #sideNav .navbar-nav .nav-item .nav-link.active::before {
+  width: 20px;
+}
+
+/* Modernized Social Icons */
+.dark .social-icons .social-icon {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--color-text);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .social-icons .social-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--cyan-gradient);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.dark .social-icons .social-icon:hover {
+  border-color: var(--accent-cyan);
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: var(--glow-cyan);
+}
+
+.dark .social-icons .social-icon:hover::before {
+  opacity: 1;
+}
+
+/* Skill List Items */
+.dark .fa-ul li {
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.dark .fa-ul li:hover {
+  transform: translateX(5px);
+}
+
+.dark .fa-ul .fa-li {
+  color: var(--accent-cyan);
+}
+
+/* Awards Icons */
+.dark .fa-medal,
+.dark .fa-certificate {
+  filter: drop-shadow(0 0 8px rgba(255, 237, 0, 0.5));
+}
+
+/* Experience Cards */
+.dark .d-flex.flex-column {
+  padding: 1.5rem;
+  margin: -1.5rem;
+  margin-bottom: 1.5rem !important;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.dark .d-flex.flex-column:hover {
+  background: var(--glass-bg);
+}
+
+/* Job Titles */
+.dark h3.mb-0 {
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+.dark .d-flex:hover h3.mb-0 {
+  color: var(--accent-cyan);
+}
+
+/* Company Names */
+.dark .subheading.mb-3 {
+  color: var(--accent-blue);
+}
+
+/* Links */
+.dark a:not(.nav-link):not(.social-icon):not(.navbar-brand) {
+  color: var(--accent-cyan);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.dark a:not(.nav-link):not(.social-icon):not(.navbar-brand)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-cyan);
+  transition: width 0.3s ease;
+}
+
+.dark a:not(.nav-link):not(.social-icon):not(.navbar-brand):hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.dark a:not(.nav-link):not(.social-icon):not(.navbar-brand):hover::after {
+  width: 100%;
+}
+
+/* HR Dividers */
+.dark hr.m-0 {
+  border-color: var(--glass-border);
+  opacity: 0.5;
+}
+
+/* Scrollbar Styling */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent-blue), var(--accent-cyan));
+}
+
+/* Lead Text */
+.dark p.lead {
+  color: var(--color-text-secondary);
+}
+
+/* Selection Color */
+.dark ::selection {
+  background: rgba(0, 212, 255, 0.3);
+  color: #ffffff;
+}
